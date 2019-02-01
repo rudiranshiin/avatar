@@ -1,5 +1,7 @@
 import React from 'react';
 import ChatList from 'components/chat/list';
+import ChatDetail from 'components/chat/detail';
+
 class ChatIndex extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ class ChatIndex extends React.PureComponent {
         <div className="chat-field__index">
           <div className="chat-field__container">
             <ChatList />
-            <div className="chat-field__detail">{''}</div>
+            <ChatDetail />
           </div>
         </div>
       </div>

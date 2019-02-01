@@ -2,7 +2,7 @@
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   &__index {
     box-sizing: border-box;
-    height: calc(100vh - 205px);
+    height: calc(100vh - 10px);
     min-height: 200px;
   }
   &__container {
@@ -46,7 +46,7 @@
         height: 30px;
         border-radius: 2px;
         background-color: #f6f6f6;
-        border: 1px solid #f6f6f6;
+        border: 1px solid #dddddd;
         outline: none;
         font-size: 12px;
         font-weight: 400;
@@ -141,6 +141,222 @@
         margin-right: 10px;
         right: 0;
         top: 0;
+      }
+    }
+  }
+  .chat-detail {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fafafa;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    padding: 71px 0 58px;
+    &__wrapper {
+      width: 100%;
+      overflow: auto;
+    }
+    &__default-screen {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        margin-top: 0;
+      }
+    }
+    &__header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid #d9d8d8;
+      background-color: #fff;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+    img.user-img {
+      flex: 0 0 40px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 1px solid #d9d8d8;
+    }
+    &__info {
+      margin-left: 10px;
+      .name {
+        color: #555;
+        font-size: 14px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        text-transform: capitalize;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .data {
+        margin-top: 2px;
+        overflow: hidden;
+        font-size: 12px;
+        font-weight: 400;
+        color: #555;
+      }
+    }
+    &__body {
+      width: 100%;
+      overflow: auto;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      .message-group {
+        &__date {
+          width: 100%;
+          text-align: center;
+          margin: 20px 0 10px;
+          font-family: Proxima Nova, Helvetica, arial, sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+        &__list {
+          display: flex;
+          flex-direction: column;
+        }
+        .message-card {
+          flex: 0 0 auto;
+          display: flex;
+          align-items: stretch;
+          justify-content: space-between;
+          font-size: 14px;
+          flex-flow: inherit;
+          &--sender {
+            margin: 6px 20px 6px 56px;
+            align-self: flex-end;
+            position: relative;
+            background-color: #dcf8c6;
+            &:before {
+              top: 0;
+              right: 0;
+              content: ' ';
+              display: block;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              position: absolute;
+              border-width: 10px 10px 0;
+              border-color: rgba(9, 30, 66, 0.1) transparent transparent;
+              margin-right: -10px;
+              margin-top: 0;
+            }
+            &:after {
+              border-color: #dcf8c6 transparent transparent;
+              top: 0;
+              right: 0;
+              content: ' ';
+              display: block;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              position: absolute;
+              border-width: 9px 9px 0;
+              border-color: #dcf8c6 transparent transparent;
+              margin-right: -8px;
+              margin-top: 1px;
+            }
+            .time {
+              bottom: 0;
+              left: -40px;
+            }
+          }
+          &--receiver {
+            margin: 6px 56px 6px 20px;
+            align-self: flex-start;
+            position: relative;
+            background-color: #ffffff;
+            &:before {
+              top: 0;
+              left: 0;
+              content: ' ';
+              display: block;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              position: absolute;
+              border-width: 10px 10px 0;
+              border-color: rgba(9, 30, 66, 0.1) transparent transparent;
+              margin-left: -10px;
+              margin-top: 0;
+            }
+            &:after {
+              top: 0;
+              left: 0;
+              content: ' ';
+              display: block;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              position: absolute;
+              border-width: 9px 9px 0;
+              border-color: #fff transparent transparent;
+              margin-left: -8px;
+              margin-top: 1px;
+            }
+            .time {
+              bottom: 0;
+              right: -40px;
+            }
+          }
+          &__text {
+            border-top: 1px solid rgba(9, 30, 66, 0.1);
+            box-shadow: 0px 1px 2px 0px rgba(9, 30, 66, 0.2);
+            border-radius: 6px;
+            padding: 6px 20px;
+            font-size: 12px;
+            line-height: 1.42;
+            letter-spacing: normal;
+            color: #4a4a4a;
+            position: relative;
+            word-break: break-word;
+            white-space: pre-line;
+            .time {
+              position: absolute;
+              font-size: 11px;
+              line-height: normal;
+              letter-spacing: 0.9px;
+              color: #848484;
+            }
+          }
+        }
+      }
+    }
+    &__form {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #d9d8d8;
+      background-color: #efefef;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      box-sizing: border-box;
+      .text-input {
+        max-height: 70px;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        padding: 10px;
+        width: 100%;
+        margin: 10px;
+        border: 1px solid #dddddd;
+        letter-spacing: 0.5px;
+        border-radius: 20px;
+        &:focus {
+          outline: 0px;
+        }
       }
     }
   }
